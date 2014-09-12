@@ -49,11 +49,7 @@ int main()
     {
         char cmd[CMD_MAX_LEN];
         printf("Input a cmd string > ");
-        scanf("%s", &cmd);
-        if(strcmp("exit",cmd)==0)
-        {
-            return 0;
-        }
+        scanf("%s", cmd);
         SelectCmd(cmd);
     }
 }
@@ -71,14 +67,13 @@ void Init()
         p->next = head;
         head = p;
     }
-    printf("Menu List:\n");
+    printf("\nMenu List:\n");
     p = head;
     while(p != NULL)
     {
         printf("%s\t:    %s\n", p->cmd_num, p->desc);
         p = p->next;
     }
-    printf("exit\t:    exit program!\n");
 }
 
 void SelectCmd(char * cmd)
