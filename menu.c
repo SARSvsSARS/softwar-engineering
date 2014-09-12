@@ -37,10 +37,10 @@ typedef struct DataNode
     struct  DataNode *next;
 } tDataNode;
 
-char * list_num[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
-char * list_sig[10]={"zero","first","second","third","fourth","fifth","sixth","seventh","eighth","ninth"};
-tDataNode *head = NULL; 
-tDataNode * p = NULL;
+char *    list_num[CMD_LEN]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+char *    list_sig[CMD_LEN]={"zero","first","second","third","fourth","fifth","sixth","seventh","eighth","ninth"};
+tDataNode *    head = NULL; 
+tDataNode *    p = NULL;
 
 int main()
 {   
@@ -54,9 +54,9 @@ int main()
     }
 }
 
+/*    Init the cmd    */
 void Init()
 { 
-    /* Init cmd list */
     int i;
     for (i=0; i<CMD_LEN; i++)
     {
@@ -76,9 +76,9 @@ void Init()
     }
 }
 
+/*    Select the cmd string    */
 void SelectCmd(char * cmd)
 {
-    /* Select cmd string */
     p = head;
     while(p != NULL)
     {
@@ -89,9 +89,9 @@ void SelectCmd(char * cmd)
         }
         p = p->next;
     }
-    if(!p)
+    if(p == NULL)
     {
-        printf("This is a wrong cmd string!\n ");
+        printf("This is a wrong cmd string!\n");
     }
 }
 
